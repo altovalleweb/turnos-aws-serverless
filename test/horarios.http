@@ -1,0 +1,33 @@
+GET https://8l8dhfsyag.execute-api.us-west-2.amazonaws.com/horarios
+
+POST https://8l8dhfsyag.execute-api.us-west-2.amazonaws.com/horarios HTTP/1.1
+content-type: application/json
+
+{
+   "horarios":
+[{"horario":"15:00 PM",   "fecha": "2022-02-13",
+    "capacidadMaxima": 5, "disponibilidad": 5},
+  {"horario":"15:30 PM",   "fecha": "2022-02-13",
+    "capacidadMaxima": 5, "disponibilidad": 5},  
+    {"horario":"16:00 PM",   "fecha": "2022-02-13",
+    "capacidadMaxima": 2, "disponibilidad": 3},
+  {"horario":"16:30 PM",   "fecha": "2022-02-13",
+    "capacidadMaxima": 5, "disponibilidad": 5},
+  {"horario":"17:00 PM",   "fecha": "2022-02-13",
+    "capacidadMaxima": 5, "disponibilidad": 5},
+  {"horario":"17:30 PM",   "fecha": "2022-02-13",
+    "capacidadMaxima": 5, "disponibilidad": 0},
+  {"horario":"18:00 PM",   "fecha": "2022-02-13",
+    "capacidadMaxima": 5, "disponibilidad": 1},
+  {"horario":"18:30 PM",   "fecha": "2022-02-13",
+    "capacidadMaxima": 5, "disponibilidad": 0},
+  {"horario":"19:00 PM",   "fecha": "2022-02-13",
+    "capacidadMaxima": 5, "disponibilidad": 0},
+  {"horario":"19:30 PM",   "fecha": "2022-02-13",
+    "capacidadMaxima": 5, "disponibilidad": 1},
+  {"horario":"20:00 PM",   "fecha": "2022-02-13",
+    "capacidadMaxima": 5, "disponibilidad": 2},
+  {"horario":"20:30 PM",   "fecha": "2022-02-13",
+    "capacidadMaxima": 5, "disponibilidad": 2}]
+}
+
