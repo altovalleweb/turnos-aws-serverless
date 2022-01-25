@@ -114,3 +114,18 @@ To learn more about the capabilities of `serverless-offline`, please refer to it
 
 
  
+
+ Offline:
+1-  add plugins:
+    - serverless-offline
+    - serverless-dynamodb-local
+2- install package:
+  npm i --save-dev serverless-offline serverless-dynamodb-local
+
+3-  add custom
+4- create table file : offline/migrations/horariosTable.json
+5- in handler js add condition proces.env.IS_OFFLINE
+6- sls dynamodb install
+
+
+3f34b959-d5fd-4a92-b716-7f217a4a2361

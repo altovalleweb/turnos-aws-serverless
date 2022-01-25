@@ -13,6 +13,20 @@ provider:
         Resource:
             - arn:aws:dynamodb:us-west-2:689680609969:table/HorariosTable           
 
+plugins:
+  - serverless-offline
+  - serverless-dynamodb-local
+
+custom:
+  dynamodb:
+    stages:
+      - dev
+    start:
+      port: 8000
+      inMemory: true
+      migrate:  true
+    migrationFile:
+      dir:  offline/migrations
 
 functions:
   hello:
@@ -32,6 +46,18 @@ functions:
     events:
       - httpApi:
           path: /horarios
+          method: get
+  addReserva:
+    handler: src/reservas.addReserva
+    events:
+      - httpApi:
+          path: /reservas
+          method: post
+  getReservas:
+    handler: src/reservas.getReservas
+    events:
+      - httpApi:
+          path: /reservas
           method: get          
                     
 
@@ -48,3 +74,14 @@ resources: # CloudFormation template syntax
         KeySchema:
           - AttributeName: id
             KeyType: HASH
+    ReservasTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ReservasTable
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH            

@@ -1,12 +1,20 @@
 const {v4} = require('uuid');
 const AWS = require('aws-sdk');
 
+let options = {}
+if(process.env.IS_OFFLINE){
+    options={
+        region: 'localhost',
+        endpoint: 'http://localhost:8000'
+    }
+}
 
+const dynamodb = new AWS.DynamoDB.DocumentClient(options);
 
 const addHorarios = async(event)=>{
 
     try{
-        const dynamodb = new AWS.DynamoDB.DocumentClient();
+        
         const {horarios} = JSON.parse(event.body)
 
                         
@@ -46,7 +54,7 @@ const addHorarios = async(event)=>{
 
 const getHorarios = async(event)=>{
     try {
-        const dynamodb = new AWS.DynamoDB.DocumentClient();
+        
         const result = await dynamodb.scan({
              TableName: 'HorariosTable'        
          }).promise()
