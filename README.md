@@ -128,4 +128,5 @@ To learn more about the capabilities of `serverless-offline`, please refer to it
 6- sls dynamodb install
 
 
-3f34b959-d5fd-4a92-b716-7f217a4a2361
+
+ sls offline start --location .
