@@ -34,7 +34,7 @@ content-type: application/json
 
 GET http://localhost:3000/horarios
 
-POST http://192.168.68.120:3000/horarios HTTP/1.1
+POST http://localhost:3000/horarios HTTP/1.1
 content-type: application/json
 
 {"horarios":[
@@ -97,3 +97,6 @@ content-type: application/json
 }
 
 GET http://localhost:3000/reservas
+
+GET http://localhost:3000/reservas/1e29cfc8-206e-47c8-9868-81a59009171d
+

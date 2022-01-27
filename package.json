@@ -22,7 +22,13 @@
   "serverless-dynamodb-local": "^0.2.40",
   
     
-  "serverless-offline": "^8.3.1"
+  "serverless-offline": "^8.3.1",
+  
+    
+  "serverless-plugin-common-excludes": "^4.0.0",
+  
+    
+  "serverless-plugin-include-dependencies": "^5.0.0"
   
   }
 }

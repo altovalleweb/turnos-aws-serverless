@@ -1,6 +1,9 @@
 service: aws-node-crud-turnos
 frameworkVersion: '2 || 3'
 
+package:
+  individually: true
+
 provider:
   name: aws
   runtime: nodejs12.x
@@ -16,6 +19,8 @@ provider:
 plugins:
   - serverless-offline
   - serverless-dynamodb-local
+  - serverless-plugin-common-excludes
+  - serverless-plugin-include-dependencies
 
 custom:
   dynamodb:
@@ -58,7 +63,13 @@ functions:
     events:
       - httpApi:
           path: /reservas
-          method: get          
+          method: get 
+  getReserva:
+    handler: src/reservas.getReserva
+    events:
+      - httpApi:
+          path: /reservas/{id}
+          method: get                      
                     
 
 resources: # CloudFormation template syntax

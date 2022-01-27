@@ -43,7 +43,8 @@ const addHorarios = async(event)=>{
     
         return {
             status:200,
-            body: "Done!"
+            body: "Done!",
+            headers:{ "Access-Control-Allow-Origin":"*","Access-Control-Allow-Methods":"GET, POST, OPTIONS"}
         }
     }catch(error){
         console.log(error)
@@ -62,7 +63,8 @@ const getHorarios = async(event)=>{
      const horarios = result.Items
          return {
              status:200,
-             body:  {horarios}
+             body:  {horarios},
+             headers:{ "Access-Control-Allow-Origin":"*","Access-Control-Allow-Methods":"GET, POST, OPTIONS"}
          }     
     } catch (error) {
         console.log(error)
