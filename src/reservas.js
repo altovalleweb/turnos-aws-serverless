@@ -54,11 +54,12 @@ const addReserva = async(event)=>{
         }).promise()
 
         elemResponse = {status: 200,
-            body: {message: 'Done!', reservaId:id}}
+            body: {message: 'Done!', reservaId:id}, headers:{ "Access-Control-Allow-Origin":"*","Access-Control-Allow-Methods":"GET, POST, OPTIONS"}}
 
      }else{      
         elemResponse = {status: 400,
-            body: {message: 'Lo sentimos pero la reserva no pudo ser realizada. Localidades disponibles actualizadas. Por favor chequee la disponibilidad del horario!'}}
+            body: {message: 'Lo sentimos pero la reserva no pudo ser realizada. Localidades disponibles actualizadas. Por favor chequee la disponibilidad del horario!'},
+            headers:{ "Access-Control-Allow-Origin":"*","Access-Control-Allow-Methods":"GET, POST, OPTIONS"}}
      }
 
 
@@ -79,11 +80,36 @@ const getReservas = async(event)=>{
      const reservas = result.Items
          return {
              status:200,
-             body:  {reservas}
+             body:  {reservas},
+             headers:{ "Access-Control-Allow-Origin":"*","Access-Control-Allow-Methods":"GET, POST, OPTIONS"}
          }     
     } catch (error) {
         console.log(error)
     }
 }
 
-module.exports = {addReserva,getReservas}
+const getReserva = async(event)=>{
+    try {
+        
+        const {id} =event.pathParameters;
+        console.log(id)
+
+        const result = await dynamodb.get({
+             TableName: 'ReservasTable',
+             Key:{
+                id
+             }       
+         }).promise()
+     
+     const reserva = result.Item
+         return {
+             status:200,
+             body:  {reserva},
+             headers:{ "Access-Control-Allow-Origin":"*","Access-Control-Allow-Methods":"GET, POST, OPTIONS"}
+         }     
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+module.exports = {addReserva,getReservas,getReserva}

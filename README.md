@@ -129,4 +129,4 @@ To learn more about the capabilities of `serverless-offline`, please refer to it
 
 
 
- sls offline start --location .
+ sls offline start
