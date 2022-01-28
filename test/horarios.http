@@ -34,7 +34,7 @@ content-type: application/json
 
 GET http://localhost:3000/horarios
 
-POST https://80m2sqz2u3.execute-api.sa-east-1.amazonaws.com/horarios HTTP/1.1
+POST http://localhost:3000/horarios HTTP/1.1
 content-type: application/json
 
 {"horarios":[
@@ -79,3 +79,13 @@ GET http://localhost:3000/reservas
 
 GET http://localhost:3000/reservas/1e29cfc8-206e-47c8-9868-81a59009171d
 
+   
+POST http://localhost:3000/send-email HTTP/1.1
+content-type: application/json
+
+{
+  "to":"mmunoznqn@gmail.com",
+  "from":"mmunoznqn.app@gmail.com",
+  "subject": "Test Email",
+  "text": "<b>Reserva<b>"
+}

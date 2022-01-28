@@ -10,10 +10,11 @@ provider:
       - Effect: Allow
         Action:
             - dynamodb:*
+            - ses:*
         Resource: '*'            
 
 plugins:
-  - serverless-webpack
+ # - serverless-webpack
   - serverless-offline
   - serverless-dynamodb-local
   - serverless-plugin-common-excludes
@@ -51,7 +52,7 @@ functions:
     events:
       - httpApi:
           path: /reservas
-          method: post
+          method: post        
   getReservas:
     handler: src/endpoints/reservas.getReservas
     events:
@@ -64,6 +65,13 @@ functions:
       - httpApi:
           path: /reservas/{id}
           method: get                      
+  sendEmail:
+        handler: src/endpoints/email.sendEmail
+        events:
+          - httpApi:
+              path: /send-email
+              method: POST
+        
                     
 
 resources: # CloudFormation template syntax
