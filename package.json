@@ -1,23 +1,15 @@
 {
+  "main": "webpack.config.js",
   "dependencies": {
-    "@middy/core": "^3.0.0-alpha.5",
-    "@middy/http-json-body-parser": "^3.0.0-alpha.5",
     "aws-sdk": "^2.1062.0",
+    "serverless-webpack": "^5.6.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-  
-    
-  "serverless-dynamodb-local": "^0.2.40",
-  
-    
-  "serverless-offline": "^8.3.1",
-  
-    
-  "serverless-plugin-common-excludes": "^4.0.0",
-  
-    
-  "serverless-plugin-include-dependencies": "^5.0.0"
-  
+    "serverless-dynamodb-local": "^0.2.40",
+    "serverless-offline": "^8.3.1",
+    "serverless-plugin-common-excludes": "^4.0.0",
+    "serverless-plugin-include-dependencies": "^5.0.0",
+    "webpack": "^5.67.0"
   }
 }

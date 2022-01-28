@@ -1,5 +1,7 @@
 const {v4} = require('uuid');
 const AWS = require('aws-sdk');
+const Responses = require('../common/API_Responses');
+
 
 let options = {}
 if(process.env.IS_OFFLINE){
@@ -39,15 +41,13 @@ const addHorarios = async(event)=>{
         }
         
     
-        
+      
+        return Responses._200({message:"Done!"});
     
-        return {
-            status:200,
-            body: "Done!",
-            headers:{ "Access-Control-Allow-Origin":"*","Access-Control-Allow-Methods":"GET, POST, OPTIONS"}
-        }
+        
     }catch(error){
         console.log(error)
+        return Responses._400({error});
     }
     
 }
@@ -61,13 +61,12 @@ const getHorarios = async(event)=>{
          }).promise()
      
      const horarios = result.Items
-         return {
-             status:200,
-             body:  {horarios},
-             headers:{ "Access-Control-Allow-Origin":"*","Access-Control-Allow-Methods":"GET, POST, OPTIONS"}
-         }     
+     return Responses._200(horarios);
+     
     } catch (error) {
-        console.log(error)
+        console.log(error) ;
+               return Responses._400({error});
+     
     }
 
    

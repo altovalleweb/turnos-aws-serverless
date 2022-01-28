@@ -34,7 +34,7 @@ content-type: application/json
 
 GET http://localhost:3000/horarios
 
-POST http://localhost:3000/horarios HTTP/1.1
+POST https://80m2sqz2u3.execute-api.sa-east-1.amazonaws.com/horarios HTTP/1.1
 content-type: application/json
 
 {"horarios":[
@@ -70,31 +70,10 @@ content-type: application/json
   {"disponibilidad":2,"capacidadMaxima":5,"id":"341c41a6-a130-4aaf-ac59-05073dbc0a7c","fecha":"2022-02-12","horario":"18:30 PM"},{
     "disponibilidad":5,"capacidadMaxima":5,"id":"d3317252-0a58-4e0a-80df-52b326557798","fecha":"2022-02-12","horario":"15:00 PM"},{"disponibilidad":1,"capacidadMaxima":5,"id":"c51d2699-7bcc-43c5-ab65-572ef45e5ed3","fecha":"2022-02-11","horario":"18:00 PM"},{"disponibilidad":3,"capacidadMaxima":5,"id":"dad629b1-ef63-48fe-ba43-6961ebd51a74","fecha":"2022-02-12","horario":"16:30 PM"},{"disponibilidad":2,"capacidadMaxima":5,"id":"ff9847fd-834c-4d74-900e-b1cb1f77460f","fecha":"2022-02-10","horario":"19:00 PM"},{"disponibilidad":3,"capacidadMaxima":5,"id":"411c53b1-ea9a-4328-b880-e40e475dc686","fecha":"2022-02-09","horario":"20:00 PM"},{"disponibilidad":2,"capacidadMaxima":5,"id":"030abac7-29b7-4808-b0e9-bffaf0cc7487","fecha":"2022-02-12","horario":"20:00 PM"},{"disponibilidad":2,"capacidadMaxima":5,"id":"9b497d0e-fa87-4679-9126-448f3f42fb29","fecha":"2022-02-10","horario":"20:00 PM"},{"disponibilidad":1,"capacidadMaxima":5,"id":"e6f393bc-5ff8-4193-baf1-9762e3ec0207","fecha":"2022-02-10","horario":"15:00 PM"},{"disponibilidad":1,"capacidadMaxima":5,"id":"79a1d6e7-5250-4968-86d3-00e497727e36","fecha":"2022-02-09","horario":"20:30 PM"},{"disponibilidad":4,"capacidadMaxima":5,"id":"4f863d56-5028-4c54-9e6d-d9d690551c59","fecha":"2022-02-11","horario":"19:30 PM"},{"disponibilidad":4,"capacidadMaxima":5,"id":"0cd1a7e6-a62f-4bb0-84a5-a6ff070dba3f","fecha":"2022-02-12","horario":"19:30 PM"},{"disponibilidad":5,"capacidadMaxima":5,"id":"7cc23340-7126-4ff8-ad41-d211dba4f4c3","fecha":"2022-02-10","horario":"20:30 PM"},{"disponibilidad":2,"capacidadMaxima":5,"id":"7271fb5a-62ea-4504-9d57-ea6adcc80ddb","fecha":"2022-02-11","horario":"20:00 PM"},{"disponibilidad":2,"capacidadMaxima":5,"id":"c9480e28-530c-4bb4-8f41-5f693a0fce9d","fecha":"2022-02-11","horario":"18:30 PM"},{"disponibilidad":3,"capacidadMaxima":5,"id":"96120b1b-6393-412b-a18d-91a5207795fc","fecha":"2022-02-10","horario":"17:30 PM"},{"disponibilidad":0,"capacidadMaxima":2,"id":"a36e57eb-d5cc-45cd-b40c-85183326529a","fecha":"2022-02-09","horario":"16:00 PM"},{"disponibilidad":2,"capacidadMaxima":5,"id":"ba103772-ec60-485b-b3a3-b09b334aebc2","fecha":"2022-02-11","horario":"17:00 PM"},{"disponibilidad":5,"capacidadMaxima":5,"id":"aae7db3d-628f-4477-9c72-8b5036d7a101","fecha":"2022-02-09","horario":"15:00 PM"},{"disponibilidad":5,"capacidadMaxima":5,"id":"83db8146-df35-4a1a-9874-33c501e684f2","fecha":"2022-02-12","horario":"15:30 PM"},{"disponibilidad":4,"capacidadMaxima":5,"id":"bc92101e-b271-471a-b99c-2906da4948d4","fecha":"2022-02-09","horario":"18:00 PM"},{"disponibilidad":4,"capacidadMaxima":5,"id":"a0b2ccb6-3ff8-4d69-8eb4-3e9c2da613a7","fecha":"2022-02-10","horario":"19:30 PM"},{"disponibilidad":1,"capacidadMaxima":5,"id":"30b92dc5-5a3d-4e38-b30c-e0e045988934","fecha":"2022-02-12","horario":"18:00 PM"},{"disponibilidad":0,"capacidadMaxima":5,"id":"3238c8d2-239c-4bc9-bdcf-45015b597e55","fecha":"2022-02-10","horario":"16:30 PM"},{"disponibilidad":2,"capacidadMaxima":5,"id":"541a2bc2-b4e9-46cf-a84a-3e173a93199e","fecha":"2022-02-12","horario":"17:00 PM"},{"disponibilidad":3,"capacidadMaxima":2,"id":"52e84606-3006-4ea8-9788-75ad93281280","fecha":"2022-02-12","horario":"16:00 PM"},{"disponibilidad":0,"capacidadMaxima":5,"id":"20ccf031-586f-427c-b761-8173d1318da7","fecha":"2022-02-12","horario":"17:30 PM"},{"disponibilidad":5,"capacidadMaxima":5,"id":"73c4c3fb-f28a-4a36-be7d-5ae4b7e0289a","fecha":"2022-02-11","horario":"15:30 PM"},{"disponibilidad":5,"capacidadMaxima":5,"id":"f5eb7fac-7271-41ae-82ec-a11c1f169527","fecha":"2022-02-09","horario":"19:00 PM"},{"disponibilidad":5,"capacidadMaxima":2,"id":"45936e4c-cffc-47ca-989d-0001176c1865","fecha":"2022-02-10","horario":"16:00 PM"},{"disponibilidad":1,"capacidadMaxima":5,"id":"6a38aef6-e646-4bcd-8dba-03c6ec3c1d8d","fecha":"2022-02-09","horario":"17:00 PM"},{"disponibilidad":5,"capacidadMaxima":5,"id":"9c2e56ea-43d4-4dde-98fe-77ba0bdaca67","fecha":"2022-02-12","horario":"20:30 PM"},{"disponibilidad":4,"capacidadMaxima":5,"id":"e2afd09b-3bc3-4652-8484-18c64124813f","fecha":"2022-02-10","horario":"15:30 PM"},{"disponibilidad":0,"capacidadMaxima":5,"id":"6d2c075f-7bc5-4cc5-9ea6-dea6cd3c2c4b","fecha":"2022-02-09","horario":"19:30 PM"},{"disponibilidad":3,"capacidadMaxima":5,"id":"afeeea65-dfc4-4184-bb2c-c42db1bd7614","fecha":"2022-02-11","horario":"16:30 PM"},{"disponibilidad":0,"capacidadMaxima":5,"id":"6b770f04-cacc-45e3-8d37-fd1036ca14bb","fecha":"2022-02-11","horario":"17:30 PM"},{"disponibilidad":5,"capacidadMaxima":5,"id":"15082fa7-9442-474a-b045-9e56d5142c43","fecha":"2022-02-11","horario":"15:00 PM"},{"disponibilidad":3,"capacidadMaxima":5,"id":"f48a8d82-7397-49d8-bf07-3ccc130ae3ec","fecha":"2022-02-10","horario":"18:30 PM"},{"disponibilidad":1,"capacidadMaxima":5,"id":"571a7201-ce64-48ef-bd91-a75dd551191b","fecha":"2022-02-10","horario":"17:00 PM"},{"disponibilidad":0,"capacidadMaxima":5,"id":"6d843752-013c-47a0-b259-b9ab2df51ae3","fecha":"2022-02-09","horario":"16:30 PM"},{"disponibilidad":3,"capacidadMaxima":5,"id":"955be2ec-80ad-41fc-b7a9-0159abf852f0","fecha":"2022-02-09","horario":"15:30 PM"},{"disponibilidad":5,"capacidadMaxima":5,"id":"1e0b8110-c835-44e0-8c82-23693c9dd269","fecha":"2022-02-11","horario":"20:30 PM"}]}
    
-POST http://localhost:3000/reservas HTTP/1.1
+POST https://80m2sqz2u3.execute-api.sa-east-1.amazonaws.com/reservas HTTP/1.1
 content-type: application/json
 
-{
-    "fecha": "2022-02-09",
-    "idHorario": "8714d13b-a42d-4409-ae01-e6419955e20d",
-    "horario": "20:00 PM",
-    "titularReserva": [
-        {
-            "dni": "31805152",
-            "nombre": "matias muñoz",
-            "email": "mmunoznqn@gmail.com"
-        }
-    ],
-    "adicionalesReserva": [
-        {
-            "dni": "20805152",
-            "nombre": "lorena troncoso"
-        },
-        {
-            "dni": "20805103",
-            "nombre": "sara guerra"
-        }
-    ]
-}
+{"fecha":"2022-02-09","idHorario":"82bc58d3-67e3-41fb-8083-4b7634811468","horario":"15:00 PM","titularReserva":[{"dni":"31805152","nombre":"matias","email":"mmunoznqn@gmail.com"}],"adicionalesReserva":[]}
 
 GET http://localhost:3000/reservas
 

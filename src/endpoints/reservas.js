@@ -1,6 +1,8 @@
 const AWS = require('aws-sdk');
 const {v4} = require ('uuid');
 
+const Responses = require('../common/API_Responses');
+
 let options = {}
 if(process.env.IS_OFFLINE){
     options={
@@ -31,7 +33,7 @@ const addReserva = async(event)=>{
      
      const totalReservas = titularReserva.length + adicionalesReserva.length
     
-     let elemResponse={}
+     let dataResponse={}
 
      if(totalReservas <= horarioResult.disponibilidad){
         console.log('se puede', totalReservas,horarioResult.disponibilidad)
@@ -53,20 +55,19 @@ const addReserva = async(event)=>{
             Item: newReserva
         }).promise()
 
-        elemResponse = {status: 200,
-            body: {message: 'Done!', reservaId:id}, headers:{ "Access-Control-Allow-Origin":"*","Access-Control-Allow-Methods":"GET, POST, OPTIONS"}}
+        dataResponse = {message: 'Done!', reservaId:id}
+        return Responses._200(dataResponse);
 
      }else{      
-        elemResponse = {status: 400,
-            body: {message: 'Lo sentimos pero la reserva no pudo ser realizada. Localidades disponibles actualizadas. Por favor chequee la disponibilidad del horario!'},
-            headers:{ "Access-Control-Allow-Origin":"*","Access-Control-Allow-Methods":"GET, POST, OPTIONS"}}
+        dataResponse = {message: 'Lo sentimos pero la reserva no pudo ser realizada. Localidades disponibles actualizadas. Por favor chequee la disponibilidad del horario!'}
+        return Responses._400(dataResponse);
      }
 
 
-     return elemResponse;
+     
         
     } catch (error) {
-        console.error(error)
+        return Responses._400({error});        
     }
 }
 
@@ -78,13 +79,10 @@ const getReservas = async(event)=>{
          }).promise()
      
      const reservas = result.Items
-         return {
-             status:200,
-             body:  {reservas},
-             headers:{ "Access-Control-Allow-Origin":"*","Access-Control-Allow-Methods":"GET, POST, OPTIONS"}
-         }     
+         return Responses._200({reservas})
+               
     } catch (error) {
-        console.log(error)
+        return Responses._400({error});        
     }
 }
 
@@ -102,13 +100,9 @@ const getReserva = async(event)=>{
          }).promise()
      
      const reserva = result.Item
-         return {
-             status:200,
-             body:  {reserva},
-             headers:{ "Access-Control-Allow-Origin":"*","Access-Control-Allow-Methods":"GET, POST, OPTIONS"}
-         }     
+     return Responses._200({reserva})    
     } catch (error) {
-        console.log(error)
+        return Responses._400({error}); 
     }
 }
 
